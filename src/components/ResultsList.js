@@ -7,7 +7,7 @@ const ResultsList = ({ title, results, navigation }) => {
     if(!results.length) {
         return null;
     }
-    
+
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
@@ -33,7 +33,9 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         marginLeft: 15,
-        marginBottom: 5
+        marginBottom: 5,
+        color: '#a22',
+        backgroundColor: '#ffb'
     },
     container: {
         marginBottom: 10

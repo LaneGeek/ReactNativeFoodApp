@@ -21,9 +21,10 @@ const ResultsShowScreen = ({navigation}) => {
 
     return (
         <View>
-            <Text>{result.name}</Text>
-            <Text>{result.location.address1}</Text>
-            <Text>{result.location.city}</Text>
+            <Text style={{...styles.details, fontWeight: 'bold'}}>{result.name}</Text>
+            <Text style={styles.details}>{result.location.address1} {result.location.address2}</Text>
+            <Text style={styles.details}>{result.location.city}, {result.location.state} {result.location.zip_code}</Text>
+            <Text style={styles.details}>Tel: {result.display_phone}</Text>
             <FlatList
                 data={result.photos}
                 keyExtractor={x => x}
@@ -38,7 +39,11 @@ const ResultsShowScreen = ({navigation}) => {
 const styles = StyleSheet.create({
     image: {
         height: 200,
-        width: 300
+        width: 300,
+        margin: 10
+    },
+    details: {
+        marginLeft: 10
     }
 });
 
